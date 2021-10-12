@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Bebas Neue Regular';
+  src: url('../font/bebasneue_light-webfont.woff');
+}
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+h1,h2{
+  color:#3160AF;
+}
+header{
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+header h1{
+  font-size: 72px;
+  font-family: 'Bebas Neue Regular', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-weight:bold;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;   
+  white-space: nowrap;
+  line-height: 120%;
+  letter-spacing: 5px;
+  
+}
+header h2{
+  font-size: 22px;
+  font-family: 'Bebas Neue Regular', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;   
+  white-space: nowrap;
+  line-height: 120%;
+  
+}
