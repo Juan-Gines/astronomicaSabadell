@@ -21,6 +21,7 @@ body{
   align-items: flex-start;
   max-width: 1000px;
   background-color: #FFFFFF;
+  min-height: 100vh;
 }
 h1,h2,h3{
   color:#3160AF;  
@@ -29,14 +30,17 @@ h1,h2,h3{
 }
 h2{
   text-align: center;
-
 }
 h3{
-  color: white;
-  background-color: #3160AF;
-  padding: 10px;
+  margin: 0px ;  
+  padding: 10px 10px 5px 10px;
 }
-
+.separador{
+  height: 3px;
+  margin: 0px 5px;
+  align-self: stretch;
+  background-color: #315faf86;
+}
 header{
   min-width: 1000px;
   display: flex;
@@ -80,8 +84,8 @@ form{
 
 }
 label{
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   margin: 5px;
 }
 input	{
@@ -90,11 +94,28 @@ input	{
   padding: 3px 5px;
   border-radius: 5px;
   border: 2px solid ;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  box-shadow: 1px 1px 2px rgb(63, 63, 71);
 }
 input:focus{
-  background-color: #47a2ec70;
+  background-color: #315faf3f;
 }
 main{
   min-width: 1000px;
+}
+button{
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 20px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3160AF;
+  color: #EDEEF0;
+  cursor:pointer;
+}
+button:active{
+  border-color: #3160AF;
+  background-color: #3160AF;
+  outline: 3px solid #315faf75;  
 }

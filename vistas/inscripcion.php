@@ -8,8 +8,9 @@ class Inscripcion{
     $idrand=mt_rand();
     $_SESSION["idrand"]=$idrand;
     ?>
-      <h2>Formulario de inscripción</h2>
+      <h2>Formulario de inscripción</h2>      
       <h3>Datos personales</h3>
+      <div class="separador"></div>
       <main>
         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
           <label for="nombre">Nombre *</label><br>
@@ -24,6 +25,7 @@ class Inscripcion{
           <input type="text" name="numSocio" id="numSocio" value="<?= isset($datos["curSocio"])? $datos["curSocio"]:""?>"><br>
           <p><small> * Campos requeridos </small></p>
           <input type="hidden" name="idrand" id="idrand" value="<?= $idrand?>">
+          <button name="datPersonales">Enviar</button>
         </form>
       </main>
     <?php
