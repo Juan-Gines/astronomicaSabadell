@@ -1,15 +1,15 @@
 <?php
 include_once "vistas/cabezera.php";
 include_once "vistas/pie.php";
-class Inscripcion{
+class Carrito{
 
-  static function form($datos=[]){
+  static function form(){
     Cabecera::head();
     $idrand=mt_rand();
     $_SESSION["idrand"]=$idrand;
     ?>
       <h2>Formulario de inscripción</h2>      
-      <h3>Datos personales - paso 1</h3>
+      <h3>Cursos disponibles - paso 2</h3>
       <div class="separador"></div>
       <main>
         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
