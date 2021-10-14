@@ -166,6 +166,45 @@ class ValidarInputs{
       }
     }
   }
+
+  public static function limpio_telefono($telefono){    
+    if (empty($telefono)) {
+      self::$msj= "<small>Teléfono requerido</small>";
+      self::$valido=false;
+    } else {            
+      $telefono=self::input_test($telefono);                       
+        if (!preg_match("/^[+\d\-\(\)\s]+$/",$telefono)) {
+          self::$msj= "<small>Teléfono invalido</small>";
+          self::$valido=false;
+        } else {
+          self::$msj=$telefono;
+          self::$valido=true;
+        }
+    } 
+  }
+
+  public static function limpio_int($int){
+    if (empty($int)) {
+      self::$msj= "<small>Número requerido</small>";
+      self::$valido=false;
+    } else {            
+      $int=self::input_test($int);                       
+        if (!preg_match("/^[\d]+$/",$int)) {
+          self::$msj= "<small>Número invalido</small>";
+          self::$valido=false;
+        } else {
+          self::$msj=$int;
+          self::$valido=true;
+        }
+    }
+  }
+
+  public static function no_requerido($info){
+    if (empty($info)) { 
+      self::$msj= "";     
+      self::$valido=true;
+    }
+  }
   public static function valido(){
     return self::$valido;
   }
@@ -173,51 +212,5 @@ class ValidarInputs{
     return self::$msj;
   }
     
-} $numeros=[
-        ["verde"],
-        ["rojo","impar","falta"],
-        ["negro","par","falta"],
-        ["rojo","impar","falta"],
-        ["negro","par","falta"],
-        ["rojo","impar","falta"],
-        ["negro","par","falta"],
-        ["rojo","impar","falta"],
-        ["negro","par","falta"],
-        ["rojo","impar","falta"],
-        ["negro","par","falta"],
-        ["negro","impar","falta"],
-        ["rojo","par","falta"],
-        ["negro","impar","falta"],
-        ["rojo","par","falta"],
-        ["negro","impar","falta"],
-        ["rojo","par","falta"],
-        ["negro","impar","falta"],
-        ["rojo","par","falta"],
-        ["rojo","impar","pasa"],
-        ["negro","par","pasa"],
-        ["rojo","impar","pasa"],
-        ["negro","par","pasa"],
-        ["rojo","impar","pasa"],
-        ["negro","par","pasa"],
-        ["rojo","impar","pasa"],
-        ["negro","par","pasa"],
-        ["rojo","impar","pasa"],
-        ["negro","par","pasa"],
-        ["negro","impar","pasa"],
-        ["rojo","par","pasa"],
-        ["negro","impar","pasa"],
-        ["rojo","par","pasa"],
-        ["negro","impar","pasa"],
-        ["rojo","par","pasa"],
-        ["negro","impar","pasa"],
-        ["rojo","par","pasa"]        
-      ];
-      /* $validador=["rojo","negro","par","impar","falta","pasa"];
-          $validador=array_merge($validador,array_keys($numeros));
-ValidarInputs::limpio_select("negro",$validador);
-          $apuesta=(ValidarInputs::valido())?true: false;
-          ValidarInputs::limpio_select(5,["5","10","20","50","100"]);
-          $pasta=(ValidarInputs::valido())?true: false;
-          var_dump($pasta);
-          var_dump($apuesta); */ 
+}  
     
