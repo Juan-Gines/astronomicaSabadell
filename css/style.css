@@ -119,3 +119,8 @@ button:active{
   background-color: #3160AF;
   outline: 3px solid #315faf75;  
 }
+.container-row{
+  display: flex;  
+  flex-direction: row;
+  align-items: center;
+}
