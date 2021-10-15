@@ -8,8 +8,8 @@ class Carrito{
     $idrand=mt_rand();
     $_SESSION["idrand"]=$idrand;
     ?>
-      <h2>Formulario de inscripción</h2>      
-      <h3>Cursos disponibles - paso 2</h3>
+      <h2>Cursos Disponibles</h2>      
+      <h3>Elige los cursos online que desees - paso 2</h3>
       <div class="separador"></div>
       <main>
         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
