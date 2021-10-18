@@ -7,9 +7,8 @@ class Inscripcion{
     Cabecera::head();
     $idrand=mt_rand();
     $_SESSION["idrand"]=$idrand;
-    ?>
-      <h2>Formulario de inscripción</h2>      
-      <h3>Datos personales - paso 1</h3>
+    ?>            
+      <h2>Datos personales - paso 1</h2>
       <div class="separador"></div>
       <main>
         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">

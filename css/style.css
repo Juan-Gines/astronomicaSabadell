@@ -1,6 +1,10 @@
 @font-face {
-  font-family: 'Bebas Neue Regular';
+  font-family: 'Bebas Neue Light';
   src: url('../font/bebasneue_light-webfont.woff');
+}
+@font-face {
+  font-family: 'Bebas Neue Regular';
+  src: url('../font/BebasNeue-Regular.woff');
 }
 *{
   margin: 0px;
@@ -23,43 +27,36 @@ body{
   background-color: #FFFFFF;
   min-height: 100vh;
 }
-h1,h2,h3{
+h1,h2,h3,h4{
   color:#3160AF;  
   align-self: stretch;
   margin: 20px 0px;
 }
-h2{
-  text-align: center;
-}
-h3{
-  margin: 0px ;  
+h2,h3{
+  margin: 20px ;
+  margin-bottom: 0px;  
   padding: 10px 10px 5px 10px;
 }
-.separador{
-  height: 3px;
-  margin: 0px 5px;
-  align-self: stretch;
-  background-color: #315faf86;
-}
+
 header{
   min-width: 1000px;
   display: flex;
   background-image: url('../imagenes/header.jpg');
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
-header div{
+header div,figure{
   margin-left: 20px;
 }
 header h1{
   font-size: 72px;
-  font-family: 'Bebas Neue Regular', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
+  font-family: 'Bebas Neue Light', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
   font-weight:bold;
   font-style: normal;
   text-decoration: none;
   text-align: left;  
-  padding: 0;
-  margin: 0;   
+  padding: 0px;
+  margin-bottom: 0px;   
   white-space: nowrap;
   line-height: 120%;  
   
@@ -67,16 +64,26 @@ header h1{
 header h2{
   font-size: 22px;
   font-family: 'Bebas Neue Regular', Arial, 'Arial Unicode MS', Helvetica, Sans-Serif;
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
   text-decoration: none;
   text-align: left;
-  padding: 0;  
+  padding: 0px;  
   letter-spacing: 20px;
-  margin: 0;   
+  margin: 0px;   
   white-space: nowrap;
   line-height: 120%;
   
+}
+.separador{
+  height: 3px;
+  margin: 0px 5px;
+  align-self: stretch;
+  background-color: #315faf86;
+}
+.lista{
+  margin: 0px;
+  margin-bottom: 10px;
 }
 form{  
   min-width: 350px;
@@ -86,6 +93,9 @@ form{
 label{
   font-size: 1rem;
   font-weight: 600;
+  margin: 5px;
+}
+p{
   margin: 5px;
 }
 input	{
@@ -102,6 +112,10 @@ input:focus{
 }
 main{
   min-width: 1000px;
+}
+input[type="radio"]{
+  width: initial;
+  box-shadow: none;
 }
 button{
   font-size: 1rem;
@@ -123,4 +137,15 @@ button:active{
   display: flex;  
   flex-direction: row;
   align-items: center;
+}
+ul{
+  padding: 20px;
+  list-style: none;  
+}
+.bloque{
+  margin: 20px;
+  padding: 10px;
+}
+.final{
+  margin: 0px 30px;
 }

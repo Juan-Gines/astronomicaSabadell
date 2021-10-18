@@ -16,7 +16,7 @@ class Datos{
       ValidarInputs::valido() ? $datos["curTelefono"]=ValidarInputs::msj() : $datos["errcurTelefono"]=ValidarInputs::msj();
       ValidarInputs::limpio_email($_POST["email"]);
       ValidarInputs::valido() ? $datos["curEmail"]=ValidarInputs::msj() : $datos["errcurEmail"]=ValidarInputs::msj();
-      ValidarInputs::limpio_email($_POST["numSocio"]);
+      ValidarInputs::limpio_int($_POST["numSocio"]);
       ValidarInputs::no_requerido($_POST["numSocio"]);
       ValidarInputs::valido() ? $datos["numSocio"]=ValidarInputs::msj() : $datos["errnumSocio"]=ValidarInputs::msj();
       $error=false;
