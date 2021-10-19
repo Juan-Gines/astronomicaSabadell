@@ -8,10 +8,10 @@ class EligePago{
         $link=$_SERVER["PHP_SELF"]."?".$datos;
         return $link;
     }
-  static function formPago(){
+  static function formPago($datos){
     Cabecera::head();
     $curso=unserialize($_SESSION["cursoElegido"]);
-    $importe=$_SESSION["importe"]=!empty($_SESSION["user"]["Socio"])? $curso->getImporteSocio(): $curso->getImporte();    
+    $importe=$_SESSION["importe"];    
     ?>       
       <div class="container-row">     
         <h2>Formas de pago - paso 3</h2>        
@@ -29,12 +29,14 @@ class EligePago{
         <h3>Método de pago (redireccionado a la plataforma de pagos online)</h3>
         <div class="separador final"></div>
         <div class="bloque">
-          <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">                 
-            <input class="" type=radio name="tipoPago" id="credito" checked></input> 
-            <label for="credito">Targeta de credito</label><br> 
-            <input type=radio name="tipoPago" id="credito"></input> 
-            <label for="paypal">Paypal</label><br>
-            <button name="submitPago">Efectuar el pago</button>
+          <form name="frm" action="https://sis-t.redsys.es:25443/sis/realizarPago" method="POST">
+            <?php
+              foreach($datos as $name=>$value){
+            ?>
+            <input type="hidden" name="<?=$name?>" value="<?=$value?>"/>
+            <?php
+              }?>
+            <button>Efectuar el pago</button>            
           </form> 
         </div>      
       </main>
