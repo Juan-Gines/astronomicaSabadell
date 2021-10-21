@@ -34,8 +34,6 @@ class Datos{
         $_SESSION["datosCorrectos"]=true;
         header("Location:{$_SERVER["PHP_SELF"]}");
         exit;
-      }else{
-        echo "formulario incorrecto";
       }
     }
     isset($datos)?Inscripcion::form($datos):Inscripcion::form();

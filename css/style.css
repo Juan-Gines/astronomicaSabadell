@@ -23,7 +23,7 @@ body{
   justify-content: left;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 1000px;
+  min-width: 1000px;
   background-color: #FFFFFF;
   min-height: 100vh;
 }
@@ -38,8 +38,7 @@ h2,h3{
   padding: 10px 10px 5px 10px;
 }
 
-header{
-  min-width: 1000px;
+header{  
   display: flex;
   background-image: url('../imagenes/header.jpg');
   flex-direction: row;
@@ -111,7 +110,7 @@ input:focus{
   background-color: #315faf3f;
 }
 main{
-  min-width: 1000px;
+  align-self: stretch;
 }
 input[type="radio"]{
   width: initial;
@@ -148,4 +147,66 @@ ul{
 }
 .final{
   margin: 0px 30px;
+}
+@media (min-width:200px) {
+  header h1{
+    font-size: 28px;
+  }
+  header h2{
+    font-size: 14px;
+    letter-spacing: 8px;
+  }
+  header figure,
+  header figure img{
+    height:100px;
+    border: 0px;
+  }
+  body{
+    min-width: 0px;
+  }
+  form{
+    min-width: 0px;
+  }
+  input{
+    width: 150px;
+  }
+  h2{
+    font-size: 20px;
+  }
+}
+@media (min-width:500px) {
+  header h1{
+    font-size: 72px;
+  }
+  header h2{
+    font-size: 22px;
+    letter-spacing: 20px;
+  }
+  header figure,
+  header figure img{
+    height:100%;
+    border: 20px;
+  }
+  body{
+    min-width: 500px;
+  }
+  input{
+    width: 250px;
+  }
+  form{
+    min-width: 350px;
+  }
+  h2{
+    font-size:24px;
+  }
+}
+@media (min-width:700px) {
+  body{
+    min-width: 700px;
+  }
+}
+@media (min-width:1000px) {
+  body{
+    min-width: 1000px;
+  }
 }
