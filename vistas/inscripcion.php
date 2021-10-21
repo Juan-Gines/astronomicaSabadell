@@ -18,7 +18,7 @@ class Inscripcion{
           <label for="apellidos">Apellidos *</label><br>
           <input type="text" name="apellidos" id="apellidos" value="<?= isset($datos["curApellidos"])? $datos["curApellidos"]:""?>">
           <output><?= isset($datos["errcurApellidos"])? $datos["errcurApellidos"]:""?></output><br>
-          <label for="telefono">Teléfono *</label><br>
+          <label for="telefono">Teléfono </label><br>
           <input type="tel" name="telefono" id="telefono" value="<?= isset($datos["curTelefono"])? $datos["curTelefono"]:""?>">
           <output><?= isset($datos["errcurTelefono"])? $datos["errcurTelefono"]:""?></output><br>
           <label for="email">Correo electrónico *</label><br>

@@ -40,4 +40,16 @@ class Datos{
     }
     isset($datos)?Inscripcion::form($datos):Inscripcion::form();
   }
+
+  function cerrar(){
+    session_destroy();
+    header("Location:{$_SERVER["PHP_SELF"]}");
+    exit;
+  }
+
+  function recompra(){
+    $_SESSION["compraErronea"]=false;
+    header("Location:{$_SERVER["PHP_SELF"]}");
+    exit;
+  }
 }
