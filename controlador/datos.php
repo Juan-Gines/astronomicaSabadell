@@ -18,7 +18,12 @@ class Datos{
       ValidarInputs::valido() ? $datos["curEmail"]=ValidarInputs::msj() : $datos["errcurEmail"]=ValidarInputs::msj();
       ValidarInputs::limpio_int($_POST["numSocio"]);
       ValidarInputs::no_requerido($_POST["numSocio"]);
-      ValidarInputs::valido() ? $datos["numSocio"]=ValidarInputs::msj() : $datos["errnumSocio"]=ValidarInputs::msj();
+      ValidarInputs::valido() ? $datos["numSocio"]=ValidarInputs::msj() : $datos["errnumSocio"]=ValidarInputs::msj();      
+      if (isset($_POST["socJoven"])&&$_POST["socJoven"]=="si"){
+        $datos["socJoven"]=true;
+      }else{
+        $datos["socJoven"]=false;
+      }     
       $error=false;
       foreach($datos as $key=>$dato){
         if(substr($key,0,3)=="err"){
@@ -41,12 +46,24 @@ class Datos{
 
   function cerrar(){
     session_destroy();
-    header("Location:{$_SERVER["PHP_SELF"]}");
+    header("Location:https://astrosabadell.org/es/");
     exit;
   }
 
   function recompra(){
     $_SESSION["compraErronea"]=false;
+    header("Location:{$_SERVER["PHP_SELF"]}");
+    exit;
+  }
+
+  function catala(){
+    $_SESSION["COidioma"]=3;
+    header("Location:{$_SERVER["PHP_SELF"]}");
+    exit;
+  }
+
+  function castellano(){
+    $_SESSION["COidioma"]=1;
     header("Location:{$_SERVER["PHP_SELF"]}");
     exit;
   }

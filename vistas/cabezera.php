@@ -4,7 +4,7 @@ class Cabecera{
   static function head(){
     ?>
     <!DOCTYPE html>
-    <html lang="es">
+    <html lang="<?=$_SESSION["COidioma"]==1 ?'es':'ca'?>">
     <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@ class Cabecera{
           <img src="imagenes/logoastronomica.png" alt="logo">
         </figure>
         <div>
-          <h1>ASTRONÓMICA</h1>
+          <h1><?= $_SESSION["COidioma"]==1 ? "ASTRONÓMICA" : "L'ASTRONÒMICA"?></h1>
           <h2>DE SABADELL</h2>
         </div>
       </header>

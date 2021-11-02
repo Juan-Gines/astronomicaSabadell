@@ -13,8 +13,16 @@ class Compra {
         foreach($cursos as $curso){         
           if(key_exists($curso->getId(),$_GET)){
             $_SESSION["COelegido"]=true;
-            $_SESSION["cursoElegido"]=serialize($curso);            
-            $_SESSION["importe"]=!empty($_SESSION["user"]["Socio"])? $curso->getImporteSocio(): $curso->getImporte();
+            $_SESSION["cursoElegido"]=serialize($curso);
+            if(empty($_SESSION["user"]["Socio"])){              
+              $_SESSION["importe"] = $curso->getImporte();
+            }else{
+              if($_SESSION["user"]["Joven"]){
+                $_SESSION["importe"] = !$curso->getImporteJoven() ? $curso->getImporteSocio(): $curso->getImporteJoven();                  
+              }else{                  
+                $_SESSION["importe"]=$curso->getImporteSocio();
+              }
+            }           
             header("location:{$_SERVER["PHP_SELF"]}");
             exit;
           }

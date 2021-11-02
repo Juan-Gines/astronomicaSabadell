@@ -11,21 +11,29 @@
   padding: 0px;
 }
 html{
+  box-sizing:border-box;
   font-family: 'open sans', Arial, Helvetica, sans-serif;
   background-color: #EDEEF0;
   display: flex;
   justify-content: left;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
+	min-height: 100%;
+	position: relative;
 }
-body{
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{  
   display: flex;
   justify-content: left;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  min-width: 1000px;
+  max-width: 1000px;
   background-color: #FFFFFF;
-  min-height: 100vh;
+  min-height: 100vh;  
+  padding-bottom: 80px !important;
 }
 h1,h2,h3,h4{
   color:#3160AF;  
@@ -74,6 +82,22 @@ header h2{
   line-height: 120%;
   
 }
+.idioma{
+  display: flex;
+  flex-direction:row;
+  align-self: stretch;
+  justify-content: center;
+}
+.titulo{
+  flex: 6;
+  align-self: center;
+}
+.iconos{
+  flex:1;
+  text-align: center;
+  align-self:center;
+  margin-top: 20px;   
+}
 .separador{
   height: 3px;
   margin: 0px 5px;
@@ -93,6 +117,7 @@ label{
   font-size: 1rem;
   font-weight: 600;
   margin: 5px;
+  word-wrap: normal;  
 }
 p{
   margin: 5px;
@@ -112,9 +137,14 @@ input:focus{
 main{
   align-self: stretch;
 }
+.radio{
+  cursor:pointer;
+}
 input[type="radio"]{
   width: initial;
   box-shadow: none;
+  margin: 10px 2px;
+  cursor: pointer;
 }
 button{
   font-size: 1rem;
@@ -148,6 +178,25 @@ ul{
 .final{
   margin: 0px 30px;
 }
+/*pie*/
+footer{
+  background-color: #3162AF;  
+  position: absolute;
+  bottom: 0;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;  
+  color:#EDEEF0;       
+	padding: 10px 0px;
+  height: 60px;
+  align-items: center;  
+}
+footer div{
+  flex:  1;
+  text-align: center;
+  
+  
+}
 @media (min-width:200px) {
   header h1{
     font-size: 28px;
@@ -158,11 +207,11 @@ ul{
   }
   header figure,
   header figure img{
-    height:100px;
+    height:80px;
     border: 0px;
   }
   body{
-    min-width: 0px;
+    width: 100%;
   }
   form{
     min-width: 0px;
@@ -172,6 +221,13 @@ ul{
   }
   h2{
     font-size: 20px;
+  }
+  footer{
+    width: 100%;
+  }
+  .cursos{
+    max-height: 150px;
+    max-width: 210px;
   }
 }
 @media (min-width:500px) {
@@ -188,7 +244,7 @@ ul{
     border: 20px;
   }
   body{
-    min-width: 500px;
+    width: 100%;
   }
   input{
     width: 250px;
@@ -199,14 +255,27 @@ ul{
   h2{
     font-size:24px;
   }
+  footer{
+    width: 100%;
+  }
+  .cursos{
+  max-height: 180px;
+  max-width: 310px;  
+}
 }
 @media (min-width:700px) {
   body{
-    min-width: 700px;
+    width: 100%;
+  }
+  footer{
+    width: 100%;
   }
 }
 @media (min-width:1000px) {
   body{
-    min-width: 1000px;
+    max-width: 1000px;
+  }
+  footer{
+    max-width: 1000px;
   }
 }

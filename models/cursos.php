@@ -6,16 +6,23 @@ class Cursos{
   private $descripcion;
   private $importe;
   private $importeSocio;
-  private $imagen;  
+  private $imagen;
+  private $nombreCa;
+  private $descripcionCa;
+  private $imagenCa;  
+  private $importeJoven;  
   
-  function __construct($id,$nombre,$descripcion,$importe,$importeSocio,$imagen) {
+  function __construct($id,$nombre,$descripcion,$importe,$importeSocio,$imagen,$nombreCa,$descripcionCa,$imagenCa,$importeJoven=false) {
     $this->id=$id;
     $this->nombre=$nombre;
     $this->descripcion=$descripcion;
     $this->importe=$importe;
     $this->importeSocio=$importeSocio;
     $this->imagen=$imagen;
-
+    $this->nombreCa=$nombreCa;
+    $this->descripcionCa=$descripcionCa;
+    $this->imagenCa=$imagenCa;
+    $this->importeJoven=$importeJoven;
   }
 
   function getId(){
@@ -41,5 +48,20 @@ class Cursos{
   function getImagen(){
     return $this->imagen;
   }
-    
+  
+  function getNombreCa(){
+    return $this->nombreCa;
+  }
+
+  function getDescripcionCa(){
+    return $this->descripcionCa;
+  }
+
+  function getImagenCa(){
+    return $this->imagenCa;
+  }
+
+  function getImporteJoven(){
+    return $this->importeJoven;
+  }
 }

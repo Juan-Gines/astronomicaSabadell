@@ -199,6 +199,14 @@ class ValidarInputs{
     }
   }
 
+  public static function limpio_checked($cheked){
+    if ($cheked==1) {      
+      self::$valido=true;      
+    } else {              
+      self::$valido=false;             
+    }
+  }
+
   public static function no_requerido($info){
     if (empty($info)) { 
       self::$msj= "";     

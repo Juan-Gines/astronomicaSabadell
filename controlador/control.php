@@ -2,7 +2,11 @@
 
 require_once "inicio.php";
 
-if(!$_SESSION["datosCorrectos"]){
+if(isset($_GET["catala"])){
+  $formDatos->catala();
+}elseif(isset($_GET["castellano"])){
+  $formDatos->castellano();
+}elseif(!$_SESSION["datosCorrectos"]){
   $formDatos->formDatos();
 }elseif(isset($_GET["Ds_Signature"])&&isset($_GET["Ds_MerchantParameters"])&&isset($_GET["Ds_SignatureVersion"])){
   $resultado->validar();
